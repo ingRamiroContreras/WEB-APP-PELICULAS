@@ -1,0 +1,14 @@
+.example-card {
+  max-width: 100px;
+  margin: 10px;
+}
+
+.image-card{
+  width: 80px;
+  height: 100px;
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}

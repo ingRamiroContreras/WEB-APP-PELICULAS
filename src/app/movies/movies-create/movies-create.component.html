@@ -1,0 +1,34 @@
+<form style="padding: 20px;" [formGroup]="formGroup">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title class="title-card-right">Creacion de peliculas</mat-card-title>
+            
+        </mat-card-header>
+        <mat-card-content>
+            <div class="example-container">
+                <mat-form-field class="">
+                    <input matInput placeholder="Nombre pelicula" formControlName="nombre" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="">
+                    <input matInput placeholder="Descripcion de la pelicula" formControlName="descripcion" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="">
+                    <input matInput placeholder="Url imagen pelicula" formControlName="url_img" required>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="">
+                    <input matInput type="number" placeholder="Dias de cartelera" formControlName="dias_presentacion"
+                        required>
+                </mat-form-field>
+                <br>
+
+                <button mat-raised-button color="primary" type="button" (click)="save()"
+                    [disabled]="!formGroup.valid">Save</button>
+
+                <a mat-button (click)="gotoList()" >Cancel</a>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>

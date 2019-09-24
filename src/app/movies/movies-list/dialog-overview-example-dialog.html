@@ -1,4 +1,5 @@
-<form  [formGroup]="formGroup">
+<form [formGroup]="formGroup">
+    <div style="color: red" *ngIf="message != null">{{message.message}}</div>
     <h1 mat-dialog-title>Reservacion pelicula {{data.nombrePelicula}}</h1>
     <div mat-dialog-content>
         <mat-form-field>
@@ -10,9 +11,14 @@
         <mat-form-field>
             <input matInput placeholder="Nombre" formControlName="nombre">
         </mat-form-field>
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Fecha de reserva" formControlName="fecha_reserva">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
     </div>
     <div mat-dialog-actions>
-        <button mat-button (click)="onClick()" [disabled] = "!formGroup.valid">Reservar</button>
+        <button mat-button (click)="onClick()" [disabled]="!formGroup.valid">Reservar</button>
         <button mat-button [mat-dialog-close]="data.idMovie" cdkFocusInitial>Cancelar</button>
     </div>
 </form>

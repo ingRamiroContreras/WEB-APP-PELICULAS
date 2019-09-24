@@ -12,9 +12,10 @@ import { NavComponent } from './nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDialogModule, MatGridListModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatDialogModule, MatGridListModule, MatNativeDateModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReservasListComponent } from './reservas/reservas-list/reservas-list.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import { ReservasListComponent } from './reservas/reservas-list/reservas-list.co
     HttpClientModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   entryComponents: [DialogOverviewExampleDialog],
   providers: [],

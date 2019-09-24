@@ -1,42 +1,29 @@
-<!-- <mat-form-field class="search-form">
-    <input matInput placeholder="Search Picture" type="text">
-</mat-form-field>
-<button button="submit" mat-raised-button color="primary">Search</button>
-<br> -->
+<form [formGroup]="formGroup">
+    <!-- <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Fecha de reserva" formControlName="fecha_creacion" (dateInput)="addEvent('input', $event)" 
+        (dateChange)="getMoviesFecha()">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker ngDefaultControl ></mat-datepicker>
+    </mat-form-field> -->
 
-<!-- <mat-card class="example-card" *ngFor="let movie of movies">
-    <mat-card-header>
-        <mat-card-title class="title-card-right">{{movie.nombre}}</mat-card-title>
-        <mat-card-subtitle>Pelicula</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image class="image-card-right"  [src]="movie.url_img" alt="{{movie.nombre}}">
-    <mat-card-content>
-        <p>
-            {{movie.descripcion}}
-        </p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-raised-button (click)="openDialog(movie.id,movie.nombre)">Reservar</button>
-    </mat-card-actions>
-</mat-card> -->
+    <input type="date" name="bday" formControlName="fecha_creacion" (change)="getMoviesFecha()">
 
-<mat-grid-list cols="4" rowHeight="220px" gutterSize="5px">
-    <mat-grid-tile *ngFor="let movie of movies">
-        <div style="margin: 10px">
-            <img class="image-card" [src]="movie.url_img" alt="{{movie.nombre}}">
-        </div>
-        <mat-grid-tile-header style="align-items: center; align-content: center">
-            <h3>{{movie.nombre}}</h3>
+    <mat-grid-list cols="4" rowHeight="220px" gutterSize="5px">
+        <mat-grid-tile *ngFor="let movie of movies">
+            <div style="margin: 10px">
+                <img class="image-card" [src]="movie.url_img" alt="{{movie.nombre}}">
+            </div>
+            <mat-grid-tile-header style="align-items: center; align-content: center">
+                <h3>{{movie.nombre}}</h3>
 
-        </mat-grid-tile-header>
-        <mat-grid-tile-footer>
-            <h4>{{movie.descripcion}}</h4>
+            </mat-grid-tile-header>
+            <mat-grid-tile-footer>
+                <h4>{{movie.descripcion}}</h4>
 
-        </mat-grid-tile-footer>
-        <div class="example-button-row">
-            <button mat-raised-button (click)="openDialog(movie.id,movie.nombre)">Reservar</button>
-
-        </div>
-
-    </mat-grid-tile>
-</mat-grid-list>
+            </mat-grid-tile-footer>
+            <div class="example-button-row">
+                <button mat-raised-button (click)="openDialog(movie.id,movie.nombre)">Reservar</button>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>

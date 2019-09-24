@@ -32,4 +32,8 @@ export class MoviesService {
   remove(id: string) {
     return this.http.delete(this.MOVIE_API + '/' + id);
   }
+  getAllFecha(fecha: any): Observable<any> {
+    debugger;
+    return this.http.get(this.MOVIE_API + '/fechacreacion/' + fecha);
+  }
 }
